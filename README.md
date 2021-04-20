@@ -250,8 +250,6 @@ import React from 'react';
 import styles from './Image.module.css';
 import cat from './react-builds-cat.png';
 
-console.log(cat);
-
 function Imager() {
   return (
     <div>
