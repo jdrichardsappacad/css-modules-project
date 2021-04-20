@@ -10,7 +10,7 @@ Express application.
 Begin by using the [create-react-app] package to create a React application:
 
 ```sh
-npx create-react-app components --template @appacademy/react-v17
+npx create-react-app css-modules --template @appacademy/react-v17
 ```
 
 > Remember that using the `create-react-app` command initializes your project
