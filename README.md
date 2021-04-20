@@ -71,14 +71,14 @@ following folders:
 - HeadingA
 - HeadingB
 
-Add an `index.js` file to each folder
-In the HeadingA folder, add a `HeadingA.module.css`.
-Add a `HeadingB.module.css` in the HeadingB folder.
+Add an `index.js` file to each folder.
+Add a `HeadingA.module.css` to the `HeadingA` folder and a
+`HeadingB.module.css` to the HeadingB folder.
 
 Then update the contents of each file to the following:
 
 ```js
-// ./src/components/HeadingA.js
+// ./src/components/HeadingA/index.js
 
 import React from 'react';
 import styles from './HeadingA.module.css';
@@ -91,7 +91,7 @@ export default HeadingA;
 ```
 
 ```css
-/* ./src/components/HeadingA.module.css */
+/* ./src/components/HeadingA/HeadingA.module.css */
 
 .heading {
   color: green;
@@ -99,7 +99,7 @@ export default HeadingA;
 ```
 
 ```js
-// ./src/components/HeadingB.js
+// ./src/components/HeadingB/index.js
 
 import React from 'react';
 import styles from './HeadingB.module.css';
@@ -112,7 +112,7 @@ export default HeadingB;
 ```
 
 ```css
-/* ./src/components/HeadingB.module.css */
+/* ./src/components/HeadingB/HeadingB.module.css */
 
 .heading {
   color: red;
@@ -235,7 +235,7 @@ You can also reference images in your CSS files too. Add a CSS file named
 `Image.module.css` to the `./src/image` folder and update its contents to this:
 
 ```css
-/* ./src/components/Imager.module.css */
+/* ./src/components/Imager/Imager.module.css */
 
 .cat {
   background-image: url(./react-builds-cat.png);
@@ -247,7 +247,7 @@ You can also reference images in your CSS files too. Add a CSS file named
 Then update the `Imager` index.js component to this:
 
 ```js
-// ./src/components/Imager.js
+// ./src/components/Imager/index.js
 
 import React from 'react';
 import styles from './Image.module.css';
