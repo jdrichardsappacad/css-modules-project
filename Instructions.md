@@ -10,7 +10,7 @@ Express application.
 Begin by using the [create-react-app] package to create a React application:
 
 ```sh
-npx create-react-app exploring-react-builds --template @appacademy/simple
+npx create-react-app components --template @appacademy/react-v17
 ```
 
 > Remember that using the `create-react-app` command initializes your project
@@ -20,7 +20,7 @@ npx create-react-app exploring-react-builds --template @appacademy/simple
 Update the `App` component:
 
 - Wrap the `<h1>` element with a `<div>` element; and
-- Change the `<h1>` element content to something like "Exploring React Builds".
+- Change the `<h1>` element content to something like "Exploring CSS Modules".
 
 ```js
 // ./src/App.js
@@ -30,7 +30,7 @@ import React from 'react';
 function App() {
   return (
     <div>
-      <h1>Exploring React Builds</h1>
+      <h1>Exploring CSS Modules</h1>
     </div>
   );
 }
@@ -65,18 +65,20 @@ projects. CSS Modules scope stylesheet class names so that they are unique to a
 specific React component. This allows you to create class names without having
 to worry if they might collide with class names used in another component.
 
-Add a new `css-modules` folder to the `src` folder. Within that folder, add the
-following files:
+Add a new `components` folder to the `src` folder. Within that folder, add the
+following folders:
 
-- `HeadingA.js`
-- `HeadingA.module.css`
-- `HeadingB.js`
-- `HeadingB.module.css`
+- HeadingA
+- HeadingB
+
+Add an `index.js` file to each folder
+In the HeadingA folder, add a `HeadingA.module.css`.
+Add a `HeadingB.module.css` in the HeadingB folder.
 
 Then update the contents of each file to the following:
 
 ```js
-// ./src/css-modules/HeadingA.js
+// ./src/components/HeadingA.js
 
 import React from 'react';
 import styles from './HeadingA.module.css';
@@ -89,7 +91,7 @@ export default HeadingA;
 ```
 
 ```css
-/* ./src/css-modules/HeadingA.module.css */
+/* ./src/components/HeadingA.module.css */
 
 .heading {
   color: green;
@@ -97,7 +99,7 @@ export default HeadingA;
 ```
 
 ```js
-// ./src/css-modules/HeadingB.js
+// ./src/components/HeadingB.js
 
 import React from 'react';
 import styles from './HeadingB.module.css';
@@ -110,7 +112,7 @@ export default HeadingB;
 ```
 
 ```css
-/* ./src/css-modules/HeadingB.module.css */
+/* ./src/components/HeadingB.module.css */
 
 .heading {
   color: red;
@@ -129,8 +131,8 @@ your new components:
 
 ```js
 import React from 'react';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
+import HeadingA from './components/HeadingA';
+import HeadingB from './components/HeadingB';
 
 function App() {
   return (
@@ -167,19 +169,17 @@ the below image.
 
 ![react builds cat]
 
-Then within the `src` folder add a new folder named `image`. Within that folder
-add a new component file named `Image.js`. Also add your downloaded image file
-to the `image` folder (so it's a sibling to the `Image.js` file).
+Then within the `src` folder add a new folder named `Imager`. Within that folder
+add a new component file named `index.js`. Also add your downloaded image file
+to the `Imager` folder (so it's a sibling to the `index.js` file).
 
-Update the contents of the `Image.js` file to this:
+Update the contents of the `index.js` file to this:
 
 ```js
-// ./src/image/Image.js
+// ./src/components/Imager
 
 import React from 'react';
 import cat from './react-builds-cat.png';
-
-console.log(cat); // /static/media/react-builds-cat.45f7f4d2.png
 
 function Image() {
   // Import result is the URL of your image.
@@ -203,9 +203,9 @@ Now update the `App` component to import and render the `Image` component:
 // ./src/App.js
 
 import React from 'react';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
-import Image from './image/Image';
+import HeadingA from './components/HeadingA';
+import HeadingB from './components/HeadingB';
+import Imager from './components/Imager';
 
 function App() {
   return (
@@ -213,7 +213,7 @@ function App() {
       <h1>Exploring React Builds</h1>
       <HeadingA />
       <HeadingB />
-      <Image />
+      <Imager />
     </div>
   );
 }
@@ -232,10 +232,10 @@ build.
 ### Images in stylesheets
 
 You can also reference images in your CSS files too. Add a CSS file named
-`Image.css` to the `./src/image` folder and update its contents to this:
+`Image.module.css` to the `./src/image` folder and update its contents to this:
 
 ```css
-/* ./src/image/Image.css */
+/* ./src/components/Imager.module.css */
 
 .cat {
   background-image: url(./react-builds-cat.png);
@@ -244,28 +244,28 @@ You can also reference images in your CSS files too. Add a CSS file named
 }
 ```
 
-Then update the `Image` component to this:
+Then update the `Imager` index.js component to this:
 
 ```js
-// ./src/image/Image.js
+// ./src/components/Imager.js
 
 import React from 'react';
-import './Image.css';
+import styles from './Image.module.css';
 import cat from './react-builds-cat.png';
 
-console.log(cat); // /static/media/react-builds-cat.45f7f4d2.png
+console.log(cat);
 
-function Image() {
+function Imager() {
   return (
     <div>
       {/* Import result is the URL of your image. */}
       <img src={cat} alt='Cat' />
-      <div className='cat'></div>
+      <div className={styles.cat}></div>
     </div>
   );
 }
 
-export default Image;
+export default Imager;
 ```
 
 Now you'll see the image displayed twice on the page!
@@ -273,8 +273,8 @@ Now you'll see the image displayed twice on the page!
 [create-react-app]: https://github.com/facebook/create-react-app
 [react builds cat]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-cat.png
 [react builds dev tools image]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-dev-tools-image.png
-[react builds css modules]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-css-modules.png
-[css modules]: https://github.com/css-modules/css-modules
+[react builds css modules]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-components.png
+[css modules]: https://github.com/components/components
 [`webpack-dev-server`]: https://webpack.js.org/configuration/dev-server/
 [browserl.ist]: https://browserl.ist
 [caniuse es6 classes]: https://caniuse.com/#feat=es6-class
