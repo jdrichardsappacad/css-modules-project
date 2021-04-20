@@ -265,7 +265,7 @@ export default Imager;
 
 Now you'll see the image displayed twice on the page!
 
-**Note: This approach will not work for pure elements, only classes. It is recommended to place element css inside the index.css file**
+**Note: This approach will not work when adding external CSS for HTML elements, only classes. It is recommended to place HTML element CSS inside the index.css file**
 
 [create-react-app]: https://github.com/facebook/create-react-app
 [react builds cat]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-cat.png
