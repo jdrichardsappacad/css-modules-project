@@ -150,9 +150,7 @@ export default App;
 Then run your application (`npm start`) to see "Heading A" and "Heading B"
 displayed respectively in green and red. If you use the browser's developer
 tools to inspect "Heading A", you'll see that the `.heading` class name has been
-modified so that it's unique to the `HeadingA` component:
-
-![react builds css modules]
+modified so that it's unique to the `HeadingA` component.
 
 CSS Modules is an example of how a front-end build process can be used to modify
 code to enable a feature that's not natively supported by browsers.
@@ -227,7 +225,6 @@ for the current page. If you can expand the `localhost:3000` > `static` >
 `media` node on the left, you can see the image file that webpack copied to your
 build.
 
-![react builds dev tools image]
 
 ### Images in stylesheets
 
@@ -272,15 +269,8 @@ Now you'll see the image displayed twice on the page!
 
 [create-react-app]: https://github.com/facebook/create-react-app
 [react builds cat]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-cat.png
-[react builds dev tools image]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-dev-tools-image.png
 [react builds css modules]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-components.png
 [css modules]: https://github.com/components/components
 [`webpack-dev-server`]: https://webpack.js.org/configuration/dev-server/
 [browserl.ist]: https://browserl.ist
-[caniuse es6 classes]: https://caniuse.com/#feat=es6-class
-[react builds transpilation]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-transpilation.png
-[react builds sourcemaps]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-sourcemaps.png
-[react builds index html]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-index-html.png
-[react builds component env var]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-component-env-var.png
-[image link]: http://localhost:9000/image
-[class component link]: http://localhost:9000/class-component
+
