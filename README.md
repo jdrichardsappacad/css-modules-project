@@ -174,17 +174,17 @@ to the `Imager` folder (so it's a sibling to the `index.js` file).
 Update the contents of the `index.js` file to this:
 
 ```js
-// ./src/components/Imager
+// ./src/components/Imager/index.js
 
 import React from 'react';
 import cat from './react-builds-cat.png';
 
-function Image() {
+function Imager() {
   // Import result is the URL of your image.
   return <img src={cat} alt='Cat' />;
 }
 
-export default Image;
+export default Imager;
 ```
 
 You can import an image into a component using the `import` keyword. This tells
